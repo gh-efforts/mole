@@ -10,7 +10,7 @@ const url = `postgres://${username}:${passwowrd}@${host}:${port}/${database}`;
 module.exports = new Sequelize(url, {
   dialect: 'postgres',
   protocol: 'postgres',
-  // logging: false,
+  logging: false,
   dialectOptions: {
     ssl: {
       require: true,
