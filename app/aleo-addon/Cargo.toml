@@ -1,0 +1,34 @@
+[package]
+name = "aleo-addon"
+version = "0.1.0"
+description = "support core methods in aleo project"
+authors = ["hexcola"]
+license = "ISC"
+edition = "2018"
+exclude = ["index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+wasm-bindgen = "0.2.83"
+snarkvm = "0.9.5"
+snarkvm-synthesizer = "0.9.5"
+snarkvm-algorithms = "0.9.5"
+
+[dependencies.snarkos-node-consensus]
+git = "https://github.com/AleoHQ/snarkOS"
+branch = "testnet3"
+
+[dependencies.neon]
+version = "0.10"
+default-features = false
+features = ["napi-6"]
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
