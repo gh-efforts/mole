@@ -25,6 +25,11 @@ class BlockModel {
     return block.height;
   }
 
+  async getBlock(height) {
+    const block = await this.model.findOne({ where: { height } });
+    return block;
+  }
+
   async createNewBlock(block) {
     const result = await this.model.create(block);
     return result;

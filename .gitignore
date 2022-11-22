@@ -106,3 +106,5 @@ dist
 playground.js
 
 .vscode
+
+.DS_Store
